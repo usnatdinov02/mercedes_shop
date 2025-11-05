@@ -1074,6 +1074,54 @@ footer a:hover {
         object-fit: cover;
     }
 
+    /* Tighten action row so buttons stay on a single line inside 2-column cards */
+    .product-card .card-body .d-flex.justify-content-between {
+        display: flex !important;
+        gap: 0.35rem;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap; /* prefer one line */
+    }
+
+    .product-card .card-body .d-flex.justify-content-between > a.btn,
+    .product-card .card-body .d-flex.justify-content-between > .btn-group {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Left (detail) button: slightly larger on mobile */
+    .product-card .card-body .d-flex.justify-content-between > a.btn {
+        flex: 0 0 52%;
+        max-width: 52%;
+        padding: 0.45rem 0.65rem;
+        font-size: 0.9rem;
+        text-align: center;
+        border-radius: 8px;
+    }
+
+    /* Right btn-group (add to cart + wishlist) */
+    .product-card .card-body .d-flex.justify-content-between > .btn-group {
+        display: flex;
+        gap: 0.4rem;
+        flex: 0 0 46%;
+        max-width: 46%;
+        justify-content: flex-end;
+    }
+
+    .product-card .card-body .btn-group .btn {
+        padding: 0.45rem 0.6rem;
+        font-size: 0.88rem;
+        min-width: 0;
+        border-radius: 8px;
+    }
+
+    /* Make primary add-to-cart a bit more prominent */
+    .product-card .card-body .btn-group .btn.btn-primary {
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
+    }
+
     /* Hero section - smaller on mobile */
     .hero .carousel-item img {
         height: 250px;
